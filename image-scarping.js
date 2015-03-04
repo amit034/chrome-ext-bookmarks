@@ -6,7 +6,7 @@ chrome.extension.onMessage.addListener(
   if (request.text && (request.text == "get_images")) {
  
    var images = $('img , image').filter(function(){
-          return ($(this).width() > 150) ||  ($(this).height() > 150)
+          return ($(this).width() > 150) &&  ($(this).height() > 150)
    });
    
    var imageUrls = [];
