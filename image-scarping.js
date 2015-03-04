@@ -11,9 +11,13 @@ chrome.extension.onMessage.addListener(
    
    var imageUrls = [];
    $.each(images,function(index,image){
-      imageUrls.push(image.src);
+        if (index<= 50){
+		imageUrls.push(image.src);
+        }
    });
-   sendResponse(window.location.href, imageUrls);
+   sendResponse({"images": imageUrls});
   }
 });
+
+
 
